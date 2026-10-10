@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5b2e17">
+<title>VLA DOCHI — Donat Mochi</title>
+<style>
+:root{--brown:#5b2e17;--brown2:#7a4327;--cream:#fff3df;--pink:#f4d0b9;--lime:#e8ed69;--ink:#3d2115}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif}
+button,input,select{font:inherit}.hero{min-height:88vh;display:flex;align-items:center;justify-content:center;padding:28px 18px;background:linear-gradient(180deg,rgba(50,24,10,.15),rgba(50,24,10,.65)),url('assets/vla-dochi-cover.jpg') center 37%/cover;position:relative;color:#fff}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(48,25,13,.42),transparent 80%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:720px;width:100%;text-align:center;text-shadow:0 2px 18px #32190d}
+.logo{font-size:clamp(3rem,10vw,6.7rem);font-weight:1000;line-height:.92;letter-spacing:-.06em;margin:0 0 14px}.logo span{display:block;color:#fff0c9}.hero p{font-size:clamp(1rem,3vw,1.3rem);font-weight:700;margin:12px auto 24px}.pill{display:inline-block;border-radius:999px;background:var(--lime);color:var(--brown);padding:9px 16px;font-weight:900;text-shadow:none}
+.btn{border:0;border-radius:999px;padding:13px 20px;background:var(--brown);color:white;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}.btn.light{background:#fff5e7;color:var(--brown);border:2px solid #e4c4a8}
+main{max-width:1120px;margin:auto;padding:42px 18px 70px}.section-head{text-align:center;margin-bottom:25px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.76rem;font-weight:900;color:var(--brown2)}h2{font-size:clamp(1.8rem,5vw,2.8rem);margin:7px 0;color:var(--brown)}.section-head p{margin:0;color:#785b48}
+.layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:22px;align-items:start}.panel{background:#fffaf2;border:1px solid #ead8c1;border-radius:24px;padding:22px;box-shadow:0 10px 30px #5b2e1710}.panel h3{margin:0 0 6px;color:var(--brown);font-size:1.2rem}.hint{font-size:.9rem;color:#866d5b;margin:0 0 16px}.price-banner{background:var(--lime);border-radius:17px;padding:15px 17px;display:flex;justify-content:space-between;align-items:center;margin:15px 0 22px;font-weight:900;color:var(--brown)}.price-banner strong{font-size:1.7rem}
+fieldset{border:0;padding:0;margin:0 0 23px}legend{font-weight:900;margin-bottom:11px;color:var(--brown)}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.choice{display:flex;gap:9px;align-items:flex-start;border:1.5px solid #ead8c1;border-radius:14px;padding:12px;background:white;cursor:pointer;min-height:55px}.choice:has(input:checked){border-color:var(--brown2);background:#fff0dc;box-shadow:inset 0 0 0 1px var(--brown2)}.choice input{accent-color:var(--brown);margin-top:4px}.choice span{font-weight:750}.choice small{display:block;font-weight:500;color:#8c715d;margin-top:2px}.qty-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.qty{display:flex;align-items:center;gap:14px}.qty button{width:35px;height:35px;border:0;border-radius:50%;background:#f0dfc9;color:var(--brown);font-size:1.2rem;font-weight:900;cursor:pointer}.qty output{font-size:1.1rem;font-weight:900;min-width:18px;text-align:center}.total{font-size:1.8rem;color:var(--brown);font-weight:1000}.cart-item{padding:12px 0;border-bottom:1px solid #ead8c1}.cart-item:last-child{border-bottom:0}.cart-item b{display:block}.cart-item small{color:#8c715d}.summary-line{display:flex;justify-content:space-between;gap:12px;margin:12px 0}.summary-line.total-line{border-top:1px dashed #c8aa8e;padding-top:14px;font-weight:1000;font-size:1.1rem}.empty{padding:18px 0;color:#8c715d;text-align:center}.form-grid{display:grid;gap:10px;margin-top:18px}.form-grid input,.form-grid select{width:100%;padding:12px 13px;border:1.5px solid #e5d1b8;border-radius:12px;background:white;color:var(--ink)}.wide{width:100%;margin-top:12px}.note{font-size:.8rem;color:#8c715d;line-height:1.5}.footer{text-align:center;padding:25px 15px;background:var(--brown);color:#fff0dc}.footer strong{font-size:1.3rem}.toast{display:none;background:#e9f4cb;color:#3d4a14;border-radius:12px;padding:12px;margin-top:12px;font-weight:700}
+@media(max-width:760px){.hero{min-height:78vh;background-position:48% center}.layout{grid-template-columns:1fr}main{padding-top:32px}.panel{padding:18px}.choices{gap:8px}.choice{padding:10px;font-size:.92rem}}
+@media(max-width:380px){.choices{grid-template-columns:1fr}.logo{font-size:3.4rem}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-content">
+    <div class="pill">DONAT MOCHI • LEMBUT & KENYAL</div>
+    <h1 class="logo">VLA <span>DOCHI</span></h1>
+    <p>Donat lembut, mochi kenyal, isian yang bikin nagih! 🍩</p>
+    <a href="#pesan"><button class="btn light">Pilih Donat Kamu ↓</button></a>
+  </div>
+</header>
+<main id="pesan">
+  <div class="section-head"><div class="eyebrow">Freshly made with love</div><h2>Racik Donat Favoritmu</h2><p>Pilih isian, topping, lalu pesan dengan mudah.</p></div>
+  <div class="layout">
+    <section class="panel">
+      <h3>🍩 Menu Donat Mochi</h3><p class="hint">Harga dasar Rp8.000 per donat.</p>
+      <div class="price-banner"><span>Donat Mochi Original</span><strong>8K</strong></div>
+      <fieldset><legend>2. Topping cair <span style="font-weight:600;color:#8c715d">(+Rp3.000)</span></legend><p class="hint">Opsional — pilih satu.</p><div class="choices">
+        <label class="choice"><input type="radio" name="sauce" value="Coklat" checked><span>Coklat 🍫</span></label>
+        <label class="choice"><input type="radio" name="sauce" value="Matcha"><span>Matcha 🍵</span></label>
+      </div></fieldset>
+      <fieldset><legend>3. Topping crunch <span style="font-weight:600;color:#8c715d">(+Rp3.000)</span></legend><p class="hint">Opsional — pilih satu.</p><div class="choices">
+        <label class="choice"><input type="radio" name="crunch" value="Tidak ada" checked><span>Tanpa crunch</span></label>
+        <label class="choice"><input type="radio" name="crunch" value="Oreo"><span>Oreo</span></label>
+        <label class="choice"><input type="radio" name="crunch" value="Coco Crunch"><span>Coco Crunch</span></label>
+        <label class="choice"><input type="radio" name="crunch" value="Wafer"><span>Wafer</span></label>
+        <label class="choice"><input type="radio" name="crunch" value="Strawberry"><span>Strawberry 🍓</span></label>
+        <label class="choice"><input type="radio" name="crunch" value="Taro"><span>Taro 💜</span></label>
+        <label class="choice"><input type="radio" name="crunch" value="Vanila"><span>Vanila</span></label>
+      </div></fieldset>
+      <div class="qty-row"><div><b>Jumlah donat</b><div class="note">Atur jumlah pesanan</div></div><div class="qty"><button type="button" id="minus" aria-label="Kurangi jumlah">−</button><output id="qty">1</output><button type="button" id="plus" aria-label="Tambah jumlah">+</button></div></div>
+      <button class="btn wide" id="add">+ Tambahkan ke pesanan</button>
+      <div class="toast" id="toast" role="status"></div>
+    </section>
+    <aside class="panel">
+      <h3>🧾 Pesanan Kamu</h3><p class="hint">Cek pesanan sebelum checkout.</p>
+      <div id="cart"><div class="empty">Belum ada donat. Yuk, pilih topping favoritmu!</div></div>
+      <div class="summary-line total-line"><span>Total</span><span id="grandTotal">Rp0</span></div>
+      <div class="form-grid">
+        <input id="customer" type="text" placeholder="Nama pemesan" autocomplete="name">
+        <input id="phone" type="tel" placeholder="Nomor WhatsApp (opsional)" autocomplete="tel">
+        <select id="delivery"><option value="Ambil sendiri">Ambil sendiri</option><option value="Diantar">Diantar</option></select>
+        <input id="address" type="text" placeholder="Alamat (jika diantar)" style="display:none">
+        <input id="notes" type="text" placeholder="Catatan pesanan (opsional)">
+      </div>
+      <button class="btn wide" id="checkout">📩 KIRIM PESANAN</button>
+      <p class="note" style="text-align:center;margin-top:12px">Pesanan akan dikirim ke email toko secara otomatis setelah pengaturan email diaktifkan. Tidak ada pembayaran online.</p>
+      <p class="note">Jika email otomatis belum dikonfigurasi, tombol akan membuka email dengan rincian pesanan sebagai cadangan.</p>
+    </aside>
+  </div>
+</main>
+<footer class="footer"><strong>VLA DOCHI</strong><div>Manisnya pas, kenyalnya bikin kangen 🤎</div></footer>
+<script>
+const PRICE=8000, EXTRA=3000;
+let qty=1, cart=[];
+const rupiah=n=>'Rp'+n.toLocaleString('id-ID');
+const selected=name=>document.querySelector(`input[name="${name}"]:checked`).value;
+function current(){const base='Isian coklat',sauce=selected('sauce'),crunch=selected('crunch');return {base,sauce,crunch,qty,unit:PRICE+EXTRA+(crunch!=='Tidak ada'?EXTRA:0)}}
+function showToast(msg){const el=document.getElementById('toast');el.textContent=msg;el.style.display='block';setTimeout(()=>el.style.display='none',2400)}
+function render(){const el=document.getElementById('cart');if(!cart.length){el.innerHTML='<div class="empty">Belum ada donat. Yuk, pilih topping favoritmu!</div>'}else{el.innerHTML=cart.map((x,i)=>`<div class="cart-item"><b>${x.qty}× Donat Mochi — ${rupiah(x.unit*x.qty)}</b><small>Isian: ${x.base} · Cair: ${x.sauce} · Crunch: ${x.crunch}</small><div style="text-align:right"><button class="btn" style="padding:6px 10px;font-size:.8rem" onclick="removeItem(${i})">Hapus</button></div></div>`).join('')}document.getElementById('grandTotal').textContent=rupiah(cart.reduce((s,x)=>s+x.unit*x.qty,0))}
+function removeItem(i){cart.splice(i,1);render()}
+document.getElementById('minus').onclick=()=>{qty=Math.max(1,qty-1);document.getElementById('qty').textContent=qty};
+document.getElementById('plus').onclick=()=>{qty=Math.min(99,qty+1);document.getElementById('qty').textContent=qty};
+document.getElementById('add').onclick=()=>{cart.push(current());render();showToast('Donat berhasil ditambahkan ke pesanan!');qty=1;document.getElementById('qty').textContent=qty};
+document.getElementById('delivery').onchange=e=>{document.getElementById('address').style.display=e.target.value==='Diantar'?'block':'none'};
+document.getElementById('checkout').onclick=async()=>{
+ if(!cart.length){showToast('Pilih dan tambahkan donat terlebih dahulu.');return}
+ const customer=document.getElementById('customer').value.trim();
+ if(!customer){document.getElementById('customer').focus();showToast('Isi nama pemesan terlebih dahulu.');return}
+ const phone=document.getElementById('phone').value.trim();
+ const delivery=document.getElementById('delivery').value,address=document.getElementById('address').value.trim();
+ if(delivery==='Diantar'&&!address){document.getElementById('address').focus();showToast('Isi alamat pengantaran.');return}
+ const total=cart.reduce((sum,x)=>sum+x.unit*x.qty,0);
+ const orderId='VD-'+Date.now().toString().slice(-8);
+ const lines=['PESANAN VLA DOCHI','Nomor pesanan: '+orderId,'Nama: '+customer,'WhatsApp: '+(phone||'-'),'Metode: '+delivery,...(delivery==='Diantar'?['Alamat: '+address]:[]),'','Detail pesanan:',...cart.map((x,i)=>`${i+1}. ${x.qty}x Donat Mochi | Isian ${x.base} | Topping cair ${x.sauce} | Crunch ${x.crunch} | ${rupiah(x.unit*x.qty)}`),'','Catatan: '+(document.getElementById('notes').value.trim()||'-'),'TOTAL PESANAN: '+rupiah(total),'Status: MENUNGGU KONFIRMASI TOKO'];
+ const payload={orderId,customer,phone,delivery,address,notes:document.getElementById('notes').value.trim(),items:cart,total,details:lines.join('\n'),website:'VLA DOCHI'};
+ // Kirim ke backend Netlify Function. Email tujuan diatur pada server.
+ const button=document.getElementById('checkout');
+ button.disabled=true; button.textContent='Mengirim pesanan…';
+ try {
+   const response=await fetch('/.netlify/functions/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+   const result=await response.json().catch(()=>({}));
+   if(!response.ok) throw new Error(result.error||'Pesanan belum berhasil dikirim. Coba lagi.');
+   showToast('Pesanan berhasil dikirim ke toko! Simpan nomor: '+orderId);
+   cart=[]; render();
+   document.getElementById('customer').value=''; document.getElementById('phone').value='';
+   document.getElementById('address').value=''; document.getElementById('notes').value='';
+ } catch(err) {
+   showToast(err.message||'Gagal mengirim pesanan. Periksa koneksi lalu coba lagi.');
+ } finally { button.disabled=false; button.textContent='📩 KIRIM PESANAN'; }
+
+};
+</script>
+</body></html>
